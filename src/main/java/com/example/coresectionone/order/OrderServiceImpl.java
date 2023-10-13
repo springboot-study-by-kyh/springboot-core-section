@@ -2,6 +2,7 @@ package com.example.coresectionone.order;
 
 import com.example.coresectionone.discount.DiscountPolicy;
 import com.example.coresectionone.discount.FixDiscountPolicy;
+import com.example.coresectionone.discount.RateDiscountPolicy;
 import com.example.coresectionone.member.Member;
 import com.example.coresectionone.member.MemberRepository;
 import com.example.coresectionone.member.MemoryMemberRepository;
@@ -9,7 +10,7 @@ import com.example.coresectionone.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy; // 구체화에 의존하지 않고 추상화인 인터페이스에만 의존을 함
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
