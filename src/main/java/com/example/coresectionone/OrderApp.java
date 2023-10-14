@@ -3,15 +3,14 @@ package com.example.coresectionone;
 import com.example.coresectionone.member.Grade;
 import com.example.coresectionone.member.Member;
 import com.example.coresectionone.member.MemberService;
-import com.example.coresectionone.member.MemberServiceImpl;
 import com.example.coresectionone.order.Order;
 import com.example.coresectionone.order.OrderService;
-import com.example.coresectionone.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member memberA = new Member(memberId, "memberA", Grade.VIP);

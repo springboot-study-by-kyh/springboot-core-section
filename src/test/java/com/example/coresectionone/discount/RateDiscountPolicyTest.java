@@ -1,6 +1,5 @@
 package com.example.coresectionone.discount;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import com.example.coresectionone.member.Grade;
 import com.example.coresectionone.member.Member;

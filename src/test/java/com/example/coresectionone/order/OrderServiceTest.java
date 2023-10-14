@@ -1,5 +1,6 @@
 package com.example.coresectionone.order;
 
+import com.example.coresectionone.AppConfig;
 import com.example.coresectionone.member.Grade;
 import com.example.coresectionone.member.Member;
 import com.example.coresectionone.member.MemberService;
@@ -9,8 +10,9 @@ import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
