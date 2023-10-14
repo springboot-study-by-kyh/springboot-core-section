@@ -2,12 +2,20 @@ package com.example.coresectionone.member;
 
 import com.example.coresectionone.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    AppConfig appConfig = new AppConfig();
-    MemberService memberService = appConfig.memberService();
+
+    MemberService memberService;
+
+    @BeforeEach // 테스트 실행전 실행
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
+
     @Test
     void 회원가입() {
         // given
