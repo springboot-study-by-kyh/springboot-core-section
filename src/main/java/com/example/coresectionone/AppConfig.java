@@ -2,6 +2,7 @@ package com.example.coresectionone;
 
 import com.example.coresectionone.discount.DiscountPolicy;
 import com.example.coresectionone.discount.FixDiscountPolicy;
+import com.example.coresectionone.discount.RateDiscountPolicy;
 import com.example.coresectionone.member.MemberRepository;
 import com.example.coresectionone.member.MemberService;
 import com.example.coresectionone.member.MemberServiceImpl;
@@ -24,7 +25,8 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        // return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 }
