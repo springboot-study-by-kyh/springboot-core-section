@@ -2,6 +2,7 @@ package com.example.coresectionone.scope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.inject.Provider;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.ObjectProvider;
@@ -36,9 +37,9 @@ public class SingletonWithPrototypeTest1 {
 
 
         @Autowired
-        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+        private Provider<PrototypeBean> prototypeBeanProvider;
         public int logic(){
-            PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+            PrototypeBean prototypeBean = prototypeBeanProvider.get(); // 새로운 프로토타입 빈 생성 확인 가능
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
